@@ -3,15 +3,17 @@ import { CartItem } from "../CartItem";
 
 class BulkDiscountRule extends PricingRule {
   price: number;
-  constructor(sku: string, discountedPrice: number) {
+  bulkNumber: number;
+  constructor(sku: string, bulkNumber: number, discountedPrice: number) {
     super(sku);
+    this.bulkNumber = bulkNumber;
     this.price = discountedPrice;
   }
 
   public apply(items: CartItem[]): void {
     const applicableItems = items.filter(item => item.sku === this.sku);
 
-    if (applicableItems.length < 4) {
+    if (applicableItems.length < this.bulkNumber) {
       return;
     }
 

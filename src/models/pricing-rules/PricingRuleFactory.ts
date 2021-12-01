@@ -6,7 +6,7 @@ interface PricingRuleMap {
 
 const PRICING_RULE_MAP: PricingRuleMap = {
   XForYRule: (config: any) => new XForYRule(config.sku, config.x, config.y),
-  BulkDiscountRule: (config: any) => new BulkDiscountRule(config.sku, config.discountedPrice)
+  BulkDiscountRule: (config: any) => new BulkDiscountRule(config.sku, config.bulkNumber, config.discountedPrice)
 };
 
 class PricingRuleFactory {

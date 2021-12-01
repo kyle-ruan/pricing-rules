@@ -8,6 +8,7 @@ export const PRICING_RULES = [
   {
     rule: 'BulkDiscountRule',
     sku: 'ipd',
-    discountedPrice: 499.99
+    discountedPrice: 499.99,
+    bulkNumber: 4
   }
 ];
